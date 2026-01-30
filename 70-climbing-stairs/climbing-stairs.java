@@ -1,0 +1,51 @@
+class Solution {
+    public int climbStairs(int n) {
+        if(n==1) return 1;
+        if(n==2) return 2;
+        int a=1;
+        int b=2;
+        int c=0;
+        for(int i=3;i<=n;i++){
+            c=a+b;
+            a=b;
+            b=c;
+        }
+        return c;
+
+    }
+}
+
+/*
+
+import java.math.BigInteger;
+
+class Solution {
+
+    static BigInteger fact(int n) {
+        BigInteger res = BigInteger.ONE;
+        for (int i = 2; i <= n; i++) {
+            res = res.multiply(BigInteger.valueOf(i));
+        }
+        return res;
+    }
+
+    static BigInteger nCr(int n, int r) {
+        if (r > n) return BigInteger.ZERO;
+        return fact(n).divide(fact(r).multiply(fact(n - r)));
+    }
+
+    public int climbStairs(int n) {
+        BigInteger ans = BigInteger.ZERO;
+        int no1 = n;
+        int len = n;
+
+        while (no1 >= 0) {
+            ans = ans.add(nCr(len, no1));
+            len--;
+            no1 -= 2;
+        }
+
+        return ans.intValue();
+    }
+}
+*/
