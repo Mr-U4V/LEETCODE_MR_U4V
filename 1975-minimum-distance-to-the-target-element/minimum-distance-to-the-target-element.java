@@ -4,18 +4,16 @@ class Solution {
         int ans2 = Integer.MAX_VALUE;
 
 
-        l:
         for(int i=start;i<nums.length;i++){
             if(nums[i]==target){
                 ans=Math.abs(i-start);
-                break l;
+                break;
             }
         }
-        l1:
         for(int i=start;i>=0;i--){
             if(nums[i]==target){
                 ans2=Math.abs(i-start);
-                break l1;
+                break;
                 
             }
         }
